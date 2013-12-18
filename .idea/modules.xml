@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/GrocerySage/GrocerySage.iml" filepath="$PROJECT_DIR$/GrocerySage/GrocerySage.iml" />
+      <module fileurl="file://$PROJECT_DIR$/GrocerySageProject.iml" filepath="$PROJECT_DIR$/GrocerySageProject.iml" />
+    </modules>
+  </component>
+</project>
+
