@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/GrocerySage/GrocerySage.iml" filepath="$PROJECT_DIR$/GrocerySage/GrocerySage.iml" />
+      <module fileurl="file://$PROJECT_DIR$/GrocerySage/GrocerySage-GrocerySage.iml" filepath="$PROJECT_DIR$/GrocerySage/GrocerySage-GrocerySage.iml" />
       <module fileurl="file://$PROJECT_DIR$/GrocerySageProject.iml" filepath="$PROJECT_DIR$/GrocerySageProject.iml" />
     </modules>
   </component>

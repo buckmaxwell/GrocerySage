@@ -1,25 +1,29 @@
 package co.foodbounty.grocerysage;
 
 import android.app.Activity;
-import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.ActionBar;
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.content.Context;
-import android.os.Build;
-import android.os.Bundle;
-import android.view.Gravity;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.ActionBarActivity;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.support.v4.widget.DrawerLayout;
-import android.widget.ArrayAdapter;
+import android.view.inputmethod.EditorInfo;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends ActionBarActivity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks {
+
+    private Button mListButton;
+    private Button mDeliverButton;
+    private  EditText mListMake;
 
     /**
      * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
@@ -31,10 +35,50 @@ public class MainActivity extends ActionBarActivity
      */
     private CharSequence mTitle;
 
+
+    public void updateList(){
+        String value = mListMake.getText().toString();
+
+
+    }
+
+
+
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+    public void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_main);
+
+            mListButton = (Button)findViewById(R.id.make_list);
+            mListButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    setContentView(R.layout.activity_list);
+                }
+            });
+            mDeliverButton=(Button)findViewById(R.id.fetch_bounty);
+            mDeliverButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    setContentView(R.layout.activity_bounties);
+                }
+            });
+
+            mListMake = (EditText) findViewById(R.id.input_list_item);
+            mListMake.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+                @Override
+                public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                    boolean handled = false;
+                    if (actionId == EditorInfo.IME_ACTION_DONE) {
+                        updateList();
+                        handled = true;
+                    }
+                    return handled;
+                }
+            });
+
+
 
         mNavigationDrawerFragment = (NavigationDrawerFragment)
                 getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);

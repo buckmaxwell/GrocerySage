@@ -9,10 +9,62 @@
 
     <!-- As the main content view, the view below consumes the entire
          space available using match_parent in both dimensions. -->
+
     <FrameLayout
         android:id="@+id/container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        >
+
+        <ImageView
+            android:id="@+id/ImageView01"
+            android:layout_height="fill_parent"
+            android:layout_width="fill_parent"
+            android:src="@drawable/food"
+            android:scaleType="matrix"></ImageView>
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#000"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            android:text="@string/top_text" />
+
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+
+
+        <Button
+            android:id="@+id/fetch_bounty"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:drawableLeft="@drawable/money_bag"
+            android:text="@string/fetch_bounty"
+            android:textColor="#cc0000"
+            android:textSize="40dp"
+            android:textStyle="bold"
+            android:src="@drawable/lake"
+            />
+
+        <Button
+            android:id="@+id/make_list"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:drawableLeft="@drawable/list"
+            android:text="@string/make_list"
+            android:textColor="#99cc00"
+            android:textSize="40dp"
+            android:textStyle="bold"
+            />
+
+        </LinearLayout>
+
+    </FrameLayout>
 
     <!-- android:layout_gravity="start" tells DrawerLayout to treat
          this as a sliding drawer on the left side for left-to-right
@@ -25,6 +77,7 @@
         android:layout_width="@dimen/navigation_drawer_width"
         android:layout_height="match_parent"
         android:layout_gravity="left"
-        android:name="co.foodbounty.grocerysage.NavigationDrawerFragment" />
+        android:name="co.foodbounty.grocerysage.NavigationDrawerFragment"
+        tools:layout="@layout/simple_list_item_1" />
 
 </android.support.v4.widget.DrawerLayout>

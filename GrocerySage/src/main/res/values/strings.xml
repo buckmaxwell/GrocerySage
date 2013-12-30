@@ -2,6 +2,10 @@
 <resources>
 
     <string name="app_name">GrocerySage</string>
+    <string name="top_text">Hey there Bounty Hunter!</string>
+    <string name="fetch_bounty">Fetch Bounties</string>
+    <string name="make_list">Make a List</string>
+    <string name="next_list_item_hint">add an item to your list</string>
     <string name="title_section1">Section 1</string>
     <string name="title_section2">Section 2</string>
     <string name="title_section3">Section 3</string>
