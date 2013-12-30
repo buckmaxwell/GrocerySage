@@ -16,6 +16,7 @@ import android.view.ViewGroup;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class MainActivity extends ActionBarActivity
@@ -24,6 +25,7 @@ public class MainActivity extends ActionBarActivity
     private Button mListButton;
     private Button mDeliverButton;
     private  EditText mListMake;
+    private TextView myText = null;
 
     /**
      * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
@@ -38,8 +40,9 @@ public class MainActivity extends ActionBarActivity
 
     public void updateList(){
         String value = mListMake.getText().toString();
-
-
+        LinearLayout lView = (LinearLayout)findViewById(R.id.the_list);
+        myText.setText(value);
+        lView.addView(myText);
     }
 
 
